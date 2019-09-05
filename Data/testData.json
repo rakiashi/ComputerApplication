@@ -1,0 +1,28 @@
+{
+  "computerDetails": {
+    "MAC BOOK 2020": {
+      "name": "MAC BOOK 2020",
+      "introduced": "2019-09-02",
+      "discontinued": "2019-09-30",
+      "company": "RCA"
+    },
+    "LENOVO 2020": {
+      "name": "LENOVO 2020",
+      "introduced": "2020-01-02",
+      "discontinued": "2020-12-31",
+      "company": "Lenovo Group"
+    },
+    "ACE 2022": {
+      "name": "ACE 2022",
+      "introduced": "2022-09-02",
+      "discontinued": "2022-12-30",
+      "company": "RCA"
+    },
+    "ACE 2024": {
+      "name": "ACE 2024",
+      "introduced": "2024-01-02",
+      "discontinued": "2024-12-30",
+      "company": "RCA"
+    }
+  }
+}
