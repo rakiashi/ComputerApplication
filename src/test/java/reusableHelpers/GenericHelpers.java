@@ -19,7 +19,6 @@ import java.util.Properties;
 
 public class GenericHelpers extends InitConstants {
 
-
     public static Properties getProperties() throws IOException {
         Properties prop = new Properties();
         prop.load(new FileInputStream(FilenameUtils.normalize("src/test/resources/application.properties")));
@@ -41,31 +40,13 @@ public class GenericHelpers extends InitConstants {
     }
 
     public static void verifyElementDisplayed(WebElement element) {
-        if (element.isDisplayed() && element.isEnabled()) {
-        } else {
-            Assert.fail();
-        }
-    }
-
-    public static void verifyElementNotDisplayed(WebElement element) {
-        try {
-            if (element.isDisplayed() && element.isEnabled()) {
-                Assert.fail();
-            }
-        } catch (Exception e) {
-            Assert.fail();
-        }
+        Assert.assertTrue("Element is Not enabled in verifyElementDisplayed Method", element.isEnabled());
+        Assert.assertTrue("Element is Not displayed after verifyElementDisplayed Method", element.isDisplayed());
     }
 
     protected static void waitForElementToBeVisible(WebElement element) {
-        new WebDriverWait(browser, 15).until(ExpectedConditions.visibilityOf(element));
-        if (!element.isDisplayed()) {
-            Assert.fail("Element is not displayed after waitForElementToBeVisible Method");
-        }
-    }
-
-    public static void waitUntilInvisibilityOfElement(WebElement element) {
-        new WebDriverWait(browser, 15).until(ExpectedConditions.invisibilityOf(element));
+        new WebDriverWait(browser, timeout).until(ExpectedConditions.visibilityOf(element));
+        Assert.assertTrue("Element is not displayed after waitForElementToBeVisible Method", element.isDisplayed());
     }
 
     public static JSONObject getJsonData(String fileName) throws IOException {

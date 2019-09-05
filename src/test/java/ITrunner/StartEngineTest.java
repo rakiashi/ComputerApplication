@@ -1,6 +1,5 @@
 package ITrunner;
 
-import com.aventstack.extentreports.service.ExtentService;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import org.junit.AfterClass;
@@ -10,12 +9,13 @@ import org.junit.runner.RunWith;
 import reusableHelpers.GenericHelpers;
 import reusableHelpers.SeleniumHelpers;
 import stepDefinitions.AddComputerPage;
-import stepDefinitions.EditComputerPage;
 import stepDefinitions.ComputerDatabasePage;
+import stepDefinitions.EditComputerPage;
 
 import java.io.IOException;
 
-import static ITrunner.InitConstants.*;
+import static ITrunner.InitConstants.browser;
+import static ITrunner.InitConstants.prop;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(monochrome = true, dryRun = false,
@@ -35,7 +35,7 @@ public class StartEngineTest {
             ComputerDatabasePage.initHomePage_Steps();
             EditComputerPage.initEditPage_Steps();
         } catch (Exception e) {
-            Assert.fail();
+            Assert.fail("Initializing Error" + e.getMessage());
         }
     }
 

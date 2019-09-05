@@ -1,5 +1,6 @@
 package reusableHelpers;
 
+import ITrunner.InitConstants;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,7 +13,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.safari.SafariOptions;
-import ITrunner.InitConstants;
+
 import java.io.IOException;
 
 public class SeleniumHelpers extends InitConstants {
@@ -21,6 +22,7 @@ public class SeleniumHelpers extends InitConstants {
         operatingSystem=prop.getProperty("os");
         browserName = prop.getProperty("browser");
         headLess = Boolean.parseBoolean(prop.getProperty("headLess"));
+        timeout = Integer.parseInt(prop.getProperty("timeout"));
         switch (operatingSystem){
             case "Win":
                 browser = windowsBrowserConfiguration(browserName);
