@@ -12,7 +12,7 @@ Feature: Perform Delete operation in computer database
       | 2020-01-02   |
       | 2020-12-31   |
       | Lenovo Group |
-    When I deleted computer details
+    When I delete computer details
     Then I see computer has been deleted
     When I search for computer name as "LENOVO 2020"
     Then I see nothing to display

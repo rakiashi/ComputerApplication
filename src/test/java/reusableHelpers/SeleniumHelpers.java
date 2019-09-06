@@ -19,21 +19,13 @@ import java.io.IOException;
 public class SeleniumHelpers extends InitConstants {
 
     public static void initiateBrowser() throws IOException {
-        operatingSystem=prop.getProperty("os");
         browserName = prop.getProperty("browser");
         headLess = Boolean.parseBoolean(prop.getProperty("headLess"));
         timeout = Integer.parseInt(prop.getProperty("timeout"));
-        switch (operatingSystem){
-            case "Win":
-                browser = windowsBrowserConfiguration(browserName);
-                break;
-            case "Mac":
-                browser = macBrowserConfiguration(browserName);
-                break;
-        }
+        browser=BrowserConfiguration(browserName);
     }
 
-    private static WebDriver windowsBrowserConfiguration(String browserName) {
+    private static WebDriver BrowserConfiguration(String browserName) {
         WebDriver browserToOpen = null;
         if (browserName.toLowerCase().equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
@@ -59,24 +51,7 @@ public class SeleniumHelpers extends InitConstants {
             WebDriverManager.edgedriver().setup();
             EdgeOptions options = new EdgeOptions();
             browserToOpen = new EdgeDriver(options);
-        }
-        return browserToOpen;
-    }
-
-    private static WebDriver macBrowserConfiguration(String browserName) {
-        WebDriver browserToOpen = null;
-        if (browserName.toLowerCase().equalsIgnoreCase("firefox")) {
-            WebDriverManager.firefoxdriver().setup();
-            FirefoxOptions firefoxOptions = new FirefoxOptions();
-            firefoxOptions.setHeadless(headLess);
-            browserToOpen = new FirefoxDriver(firefoxOptions);
-        } else if (browserName.toLowerCase().equalsIgnoreCase("chrome")) {
-            WebDriverManager.chromedriver().setup();
-            ChromeOptions options = new ChromeOptions();
-            options.setHeadless(headLess);
-            options.addArguments("--window-size=1280,1700");
-            browserToOpen = new ChromeDriver(options);
-        } else if (browserName.toLowerCase().equalsIgnoreCase("safari")) {
+        }else if (browserName.toLowerCase().equalsIgnoreCase("safari")) {
             SafariOptions option = new SafariOptions();
             browserToOpen = new SafariDriver(option);
         }

@@ -14,6 +14,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Properties;
 
 
@@ -67,6 +71,19 @@ public class GenericHelpers extends InitConstants {
 
     public static String getValueFromElement(WebElement element) {
         return element.getAttribute("value").trim();
+    }
+
+    public static String dateFormat(String dateFormat) {
+        try {
+            DateFormat srcDf = new SimpleDateFormat("yyyy-MM-dd");
+            Date date = srcDf.parse(dateFormat);
+            DateFormat destDf = new SimpleDateFormat("dd MMM yyyy");
+            String formatDate = destDf.format(date);
+            return formatDate;
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return dateFormat;
     }
 }
 

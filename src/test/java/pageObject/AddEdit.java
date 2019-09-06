@@ -11,6 +11,7 @@ public class AddEdit {
     public final static String createSave="input[class='btn primary']";
     public final static String cancel="Cancel";
     public final static String delete="input[class='btn danger']";
+    public final static String fieldError="fieldset [class='clearfix error']";
 
     //----------------------------------------------------------------------
 }

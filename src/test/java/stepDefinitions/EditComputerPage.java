@@ -48,16 +48,16 @@ public class EditComputerPage extends GenericHelpers {
         enterValueInEditField(fieldNameElement, valueToEnter);
     }
 
-    @Then("^I (updated|canceled|deleted) computer details$")
+    @Then("^I (update|cancel|delete) computer details$")
     public void iUpdatedCanceledComputerDetails(String expectedCondition) {
         switch (expectedCondition) {
-            case "updated":
+            case "update":
                 saveComputer.click();
                 break;
-            case "canceled":
+            case "cancel":
                 cancel.click();
                 break;
-            case "deleted":
+            case "delete":
                 deleteComputer.click();
                 break;
             default:
@@ -67,9 +67,9 @@ public class EditComputerPage extends GenericHelpers {
 
     @Then("^I see computer \"([^\"]*)\" details$")
     public void iShouldBeAbleToReadThoseComputerDetails(String ComputerName, List<String> expectedValues) throws IOException {
-        waitForElementToBeVisible(ComputerDatabasePage.selectFirstItem);
-        if (ComputerDatabasePage.selectFirstItem.getText().trim().equalsIgnoreCase(ComputerName)) {
-            ComputerDatabasePage.selectFirstItem.click();
+        waitForElementToBeVisible(ComputerDatabasePage.computerNameFirstItem);
+        if (ComputerDatabasePage.computerNameFirstItem.getText().trim().equalsIgnoreCase(ComputerName)) {
+            ComputerDatabasePage.computerNameFirstItem.click();
             waitForElementToBeVisible(name);
             compareExpectedWithActual(expectedValues.get(0), getValueFromElement(name));
             compareExpectedWithActual(expectedValues.get(1), getValueFromElement(introduced));

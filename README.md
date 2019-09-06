@@ -11,7 +11,7 @@
 -Commonly used test utility classes
 -Enabled for CT 
 
-## Tools````
+## Tools
 
 -Selenium WebDriver
 -Maven
@@ -40,6 +40,19 @@ The Project is for Functional UI Automation testing , Before running this projec
 
 In this project i have used cucumber reports , which gives more info on each steps by taking screenshots :
 you can get in this path : \target\site\cucumber-pretty
+
+## Test-outputs 
+
+-Tested in Windows OS 10
+-Tested in Mac OS X
+-Cross browser testing with Chrome,Firefox and Safari
+-Tested CT job by configuring in Jenkins (refer cucumber screenshot document)
+
+## Observations
+
+ -Computer name can be created even with special characters
+ -Duplicate computer names can be created
+ -Sorting is not happening even thou i see there is an option in result table
 
 
 
