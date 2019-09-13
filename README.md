@@ -21,7 +21,7 @@
 
 ## Requirements
 
-In order make this project up and running you nned to have following configuration settings :
+In order make this project up and running you need to have following configuration settings :
 
  -SDK configuration under file browser for latest JDK installed in your machine
  -Once you are able to see java class files are loaded as expected then you are good to go for next step
@@ -33,7 +33,8 @@ The Project is for Functional UI Automation testing , Before running this projec
 -To Run in chrome or firefox browser , make sure you have updated in application.properties file under resources folder
 -To Run in headLess mode by default settings should be true 
 -To Run on desired operating system update os property as Win or Mac respectively
--To Run from terminal go to project path as ComputerApplication and run command as mvn clean install
+-To Run from terminal go to project path as ComputerApplication and run command as ```mvn clean install```
+-To Run from runner class StartEngine under itRunner package use Run button
 
 
 ## Reporting

@@ -1,4 +1,4 @@
-package ITrunner;
+package itRunner;
 
 import org.openqa.selenium.WebDriver;
 

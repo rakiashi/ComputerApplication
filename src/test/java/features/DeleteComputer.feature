@@ -1,10 +1,12 @@
 @test
-Feature: Perform Delete operation in computer database
+Feature: Delete a computer
+  As a user
+  I want to delete one computer
 
   Background: computer data base
     Given I launch computer data base application
 
-  Scenario: Delete Computer
+  Scenario: Delete one Computer
     Given I add an new computer as "LENOVO 2020" name
     When I search for computer name as "LENOVO 2020"
     When I see computer "LENOVO 2020" details
