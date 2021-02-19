@@ -40,7 +40,7 @@ The Project is for Functional UI Automation testing , Before running this projec
 ## Reporting
 
 In this project i have used cucumber reports , which gives more info on each steps by taking screenshots :
-you can get in this path : \target\site\cucumber-pretty 
+you can get in this path : \target\site\cucumber-prettyq
 
 ## Test-outputs 
 
