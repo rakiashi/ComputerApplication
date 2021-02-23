@@ -13,7 +13,7 @@ pipeline {
             sh '! grep "ERROR" output.log'
 
             script {
-              sh 'mvn clean install'
+               BUILD_COMPLETE = true
             }
       }
     }
