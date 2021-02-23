@@ -8,13 +8,7 @@ pipeline {
     }
     stage('Testing') {
       steps {
-           sh "mvn clean install |  tee output.log"
-
-            sh '! grep "ERROR" output.log'
-
-            script {
-               BUILD_COMPLETE = true
-            }
+           sh "mvn clean install"
       }
     }
   }
