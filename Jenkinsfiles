@@ -1,0 +1,19 @@
+node{
+  stages {
+    stage('SCM Checkout') {
+      git 'https://gitlab.com/rakesh_mahadevaswamy/petstore_api_test.git'
+      }
+     stage('Testing') {
+          steps {
+
+            sh "mvn clean install |  tee output.log"
+
+            sh '! grep "ERROR" output.log'
+
+            script {
+              sh 'mvn clean install'
+            }
+          }
+     }
+    }
+  }
